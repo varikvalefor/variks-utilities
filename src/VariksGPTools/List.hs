@@ -15,7 +15,10 @@
 --
 -- This module contains some functions which facilitate doing stuff with
 -- 'List's.
-module VariksGPTools.List where
+module VariksGPTools.List (
+  sublist,
+  unfurl
+) where
 import Data.Bool;
 import Data.Maybe;
 import Data.Either;
