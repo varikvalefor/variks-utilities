@@ -16,6 +16,9 @@
 -- This module contains some functions which facilitate doing stuff with
 -- 'List's.
 module VariksGPTools.List where
+import Data.Bool;
+import Data.Maybe;
+import Data.Either;
 
 -- | = la .lojban.
 --
@@ -33,3 +36,20 @@ module VariksGPTools.List where
 sublist :: Eq a => [a] -> [a] -> Bool;
 sublist [] _ = True;
 sublist (x:xs) c = x `elem` c && xs `sublist` (drop 1 c);
+
+-- | = la .lojban.
+--
+-- .ni'o ganai le sumti cu vasru lo me'oi .'Left'. gi me'oi .output. le
+-- pamoi me'oi .'Left'.  .i ganai le sumti cu vasru lo no me'oi .'Left'.
+-- gi me'oi .output. lo ro me'oi .'Right'.
+--
+-- = English
+--
+-- If @k@ contains a 'Left' value, then @unfurl k@ 'Left'-outputs the
+-- first 'Left' value of @k@.  If @k@ contains no 'Left' values, then
+-- @unfurl k@ 'Right'ly outputs all elements of @k@.
+unfurl :: [Either a b] -> Either a [b];
+unfurl k = bool lefts' rights' $ null $ lefts k
+  where
+  rights' = Right $ rights k
+  lefts' = Left $ head $ lefts k;
