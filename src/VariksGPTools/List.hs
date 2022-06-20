@@ -25,8 +25,8 @@ import Data.Either;
 
 -- | = la .lojban.
 --
--- .ni'o go la'oi .@a@. cu me'oi .sublist. la'oi .@b@. gi me'oi
--- la'oi .'True'. cu .@sublist@. la'oi .@a@. la'oi .@b@.  .i go la'oi
+-- .ni'o go la'oi .@a@. cu me'oi .sublist. la'oi .@b@. gi la'oi
+-- .'True'. cu me'oi .@sublist@. la'oi .@a@. la'oi .@b@.  .i go la'oi
 -- .@a@. cu me'oi .sublist.  la'oi .@b@. gi jetnu le du'u cumki fa le
 -- nu jmina zo'e la'oi .@a@.  la'oi .@b@. kei .a le du'u la'oi .@a@. du
 -- la'oi .@b@.
