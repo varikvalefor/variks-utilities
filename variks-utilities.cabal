@@ -6,10 +6,10 @@ synopsis: General-purpose public domain functions
 
 description: @variks-utilities@ is a library which contains functions
              which solve various problems which are often encountered
-	     by VARIK VALEFOR.  Instead of implementing
-	     program-specific solutions for these problems, VARIK
-	     combines many such solutions into a single library which
-	     can be freely used in other programs.
+             by VARIK VALEFOR.  Instead of implementing
+             program-specific solutions for these problems, VARIK
+             combines many such solutions into a single library which
+             can be freely used in other programs.
 
 bug-reports: https://github.com/varikvalefor/variks-utilities/issues
 
@@ -19,11 +19,11 @@ maintainer:         varikvalefor@aol.com
 copyright: Unlicense
 category: General
 
-library variks-utilities
+library
     exposed-modules:
-      VariksGPTools/List
+      VariksGPTools.List
     other-modules:
     other-extensions:
     build-depends:    base ^>=4.14.3.0
-    hs-source-dirs:   app
+    hs-source-dirs:   src
     default-language: Haskell2010
