@@ -52,7 +52,4 @@ sublist (x:xs) c = x `elem` c && xs `sublist` (drop 1 c);
 -- first 'Left' value of @k@.  If @k@ contains no 'Left' values, then
 -- @unfurl k@ 'Right'ly outputs all elements of @k@.
 unfurl :: [Either a b] -> Either a [b];
-unfurl k = bool lefts' rights' $ null $ lefts k
-  where
-  rights' = Right $ rights k
-  lefts' = Left $ head $ lefts k;
+unfurl k = maybe (Right $ rights k) Left $ listToMaybe $ lefts k;
