@@ -27,7 +27,7 @@ main :: IO ExitCode;
 main = bool exitFailure exitSuccess $ and correctness
   where {
   correctness :: [Bool];
-  correctness = [testUnfurl];
+  correctness = [testUnfurl, testSublist];
 };
 
 -- | = la .lojban.
@@ -46,5 +46,32 @@ testUnfurl = all (\a -> unfurl (fst a) == snd a) unfurlables
     ([Right 1, Right 2, Right 3], Right [1,2,3]),
     ([Right 1, Right 2, Left 3], Left 3),
     ([Right 1, Left 2, Right 3], Left 2)
+  ];
+};
+
+-- | = la .lojban.
+--
+-- ni'o go la'oi .@testSublist@. me'oi .'True'. gi la'oi .'sublist'.
+-- drani
+--
+-- = English
+--
+-- @testSublist@ is 'True' iff 'sublist' works.
+testSublist :: Bool;
+testSublist = all sublist' truePairs && all (not . sublist') falsePairs
+  where {
+  sublist' :: ([Integer], [Integer]) -> Bool;
+  sublist' a = sublist (fst a) (snd a);
+
+  truePairs :: [([Integer], [Integer])];
+  truePairs = [
+    ([1,2,3], [5,1,5,2,3,5]),
+    ([0], [0])
+  ];
+
+  falsePairs :: [([Integer], [Integer])];
+  falsePairs = [
+    ([0], [1,2,3]),
+    ([1,2,3,4], [1,2,3])
   ];
 };
