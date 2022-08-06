@@ -42,9 +42,8 @@ sublist (x:xs) c = x `elem` c && xs `sublist` (drop 1 c);
 
 -- | = la .lojban.
 --
--- .ni'o ganai le sumti cu vasru lo me'oi .'Left'. gi me'oi .output. le
--- pamoi me'oi .'Left'.  .i ganai le sumti cu vasru lo no me'oi .'Left'.
--- gi me'oi .output. lo ro me'oi .'Right'.
+-- .ni'o gonai ge le sumti cu vasru lo me'oi .'Left'. gi me'oi .output.
+-- le pamoi me'oi .'Left'. gi me'oi .output. lo ro me'oi .'Right'.
 --
 -- = English
 --
